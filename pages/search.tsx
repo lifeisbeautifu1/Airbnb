@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { format } from 'date-fns';
 
-import { Header, Footer, InfoCard } from '../components';
+import { Header, Footer, InfoCard, Map } from '../components';
 import { searchData } from '../data';
 import { ISearchData } from '../types';
 
@@ -47,6 +47,9 @@ const Search: NextPage<SearchProps> = ({ searchData: searchResults }) => {
               <InfoCard key={index} {...item} />
             ))}
           </div>
+        </section>
+        <section className='hidden xl:inline-flex xl:min-w-[600px]'>
+          <Map searchResults={searchResults} />
         </section>
       </main>
       <Footer />

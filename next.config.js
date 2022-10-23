@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  env: {
+    mapbox_key:
+      'pk.eyJ1IjoibGlmZWlzYmVhdXRpZnUxIiwiYSI6ImNsOWt4ZzdlajBrOXQzdnBsYW9kdGprNTUifQ.D9wHvp76DCHqRn6C5cTLsw',
+  },
   swcMinify: true,
   images: {
     domains: [
