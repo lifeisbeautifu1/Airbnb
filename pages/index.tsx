@@ -9,6 +9,7 @@ import {
   LargeCard,
   Footer,
 } from '../components';
+import { exploreData, cardsData } from '../data';
 import { IExploreData, ICardData } from '../types';
 
 interface HomePageProps {
@@ -18,7 +19,7 @@ interface HomePageProps {
 
 const Home: NextPage<HomePageProps> = ({ exploreData, cardsData }) => {
   return (
-    <>
+    <div className='font-primary'>
       <Head>
         <title>Airbnb</title>
       </Head>
@@ -49,19 +50,18 @@ const Home: NextPage<HomePageProps> = ({ exploreData, cardsData }) => {
         />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const exploreData = await fetch('https://www.jsonkeeper.com/b/4G1G').then(
-    (res) => res.json()
-  );
+  // const exploreData = await fetch('https://www.jsonkeeper.com/b/4G1G').then(
+  //   (res) => res.json()
+  // );
 
-  const cardsData = await fetch('https://www.jsonkeeper.com/b/VHHT').then(
-    (res) => res.json()
-  );
-  console.log(cardsData);
+  // const cardsData = await fetch('https://www.jsonkeeper.com/b/VHHT').then(
+  //   (res) => res.json()
+  // );
 
   return {
     props: {
